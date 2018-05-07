@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/tntucker0015/bamazon#readme",
   "dependencies": {
+    "inquire": "^0.4.8",
+    "inquirer": "^5.2.0",
     "mysql": "^2.15.0",
     "node-modules": "^1.0.1",
     "require": "^2.4.20"
