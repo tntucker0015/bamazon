@@ -7,6 +7,7 @@ Before running this application you need to first install some NPM packages
   2) npm i node-modules (adding node_modules)
   3) npm i mysql
   4) npm i require
+  5) npm i table
   
  # INSTRUCTIONS:
   WELCOME to BAMAZON! In this application you can review the list of items for sale and purchase as many as you would like provided we hae enough inventory. HAPPY SHOPPING!
