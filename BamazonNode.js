@@ -52,15 +52,20 @@ function runSearch() {
           break;
 
         case "EXIT":
-          console.log('');
-          console.log("=============================================================");
-          console.log("Goodbye, Have a great Day!");
-          console.log("=============================================================");
-          console.log('');
-          connection.end();
+        exit();
+        
           break;
       }
     });
+}
+
+function exit() {
+  console.log('');
+  console.log("=============================================================");
+  console.log("Goodbye, Have a great Day!");
+  console.log("=============================================================");
+  console.log('');
+  connection.end();
 }
 
 function buyItem() {
