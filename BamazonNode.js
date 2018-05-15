@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
 
 connection.connect(function (err) {
   if (err) throw err;
-  console.log("connected as id " + connection.threadId);
+  console.table("connected as id " + connection.threadId);
   start();
   runSearch();
 });
@@ -24,8 +24,7 @@ connection.connect(function (err) {
 function start() {
   connection.query("SELECT * FROM products", function (err, res) {
     if (err) throw err;
-    console.log(res);
-    // connection.end();
+    
   });
 };
 
@@ -71,6 +70,7 @@ function exit() {
 function buyItem() {
   connection.query("SELECT * FROM products", function (err, results) {
     if (err) throw err;
+    console.table(results);
     inquirer.prompt([{
           type: "rawlist",
           name: "id",
@@ -96,7 +96,6 @@ function buyItem() {
               chosenItem = results[i];
             }
           }
-          console.log(chosenItem);
           if (chosenItem.stock_quantity > parseInt(answer.purchaseQuantity)) {
               connection.query(
                 "UPDATE products SET ? where ?", 
@@ -111,7 +110,7 @@ function buyItem() {
                   if (err) throw err;
                   console.log('');
                   console.log("=============================================================");
-                  console.log("Item PUrchased: " + chosenItem.product_name);
+                  console.log("Item Purchased: " + chosenItem.product_name);
                   console.log("Quantity Purchased: " + answer.purchaseQuantity );
                   console.log("Total Price: " + (chosenItem.price * answer.purchaseQuantity));
                   console.log("=============================================================");
